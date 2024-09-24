@@ -30,7 +30,7 @@ class _BottomBarState extends State<BottomBar> with WidgetsBindingObserver {
     "My Orders",
     "More"
   ];
-  late final String _selectedCategory = '';
+
   late List<Widget> _screens;
   double _keyboardHeight = 0.0;
   void getCategory() async {
@@ -52,18 +52,6 @@ class _BottomBarState extends State<BottomBar> with WidgetsBindingObserver {
     });
   }
 
-  void _goToHomepage() {
-    _pageController.animateToPage(
-      0, // Index of the homepage
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.ease,
-    );
-  }
-
-  void _goToSecondPage() {
-    _pageController.jumpToPage(1);
-    _onItemTapped(1);
-  }
 
   @override
   void initState() {
@@ -77,40 +65,12 @@ class _BottomBarState extends State<BottomBar> with WidgetsBindingObserver {
 
     _screens = [
       HomeScreen(), Dashboard()
-      // const CategoryScreen(),
-      // MyDraft(
-      //   goToSecondPage: _goToHomepage,
-      // ),
-      // OrderScreen(
-      //   goToSecondPage: _goToHomepage,
-      // ),
-      // const MoreScreen(),
+
     ];
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
-      _updateKeyboardHeight();
-    });
-    WidgetsBinding.instance?.addObserver(this);
+  
   }
 
-  @override
-  void dispose() {
-    _pageController.dispose();
-    WidgetsBinding.instance?.removeObserver(this);
 
-    super.dispose();
-  }
-
-  void _updateKeyboardHeight() {
-    final height = MediaQuery.of(context).viewInsets.bottom;
-    setState(() {
-      _keyboardHeight = height;
-    });
-  }
-
-  @override
-  void didChangeMetrics() {
-    _updateKeyboardHeight();
-  }
   // ResizeObserver to detect changes in the view size
 
   final List<BottomNavigationBarItem> _bottomNavBarItems = [
