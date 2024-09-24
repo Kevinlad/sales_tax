@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251819963155",
+    "project_id": "salestask-344a0",
+    "storage_bucket": "salestask-344a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251819963155:android:9ec9b70b9b9c80320ca0e6",
+        "android_client_info": {
+          "package_name": "com.example.xianinfotech_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkWSFwZZYgeHgTH_QceMzUgqtW90gKK4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
