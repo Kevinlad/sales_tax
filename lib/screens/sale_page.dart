@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:xianinfotech_task/screens/add_items.dart';
 import 'package:xianinfotech_task/widgets/charge.dart';
 import 'package:xianinfotech_task/screens/home_screen.dart';
-import 'package:xianinfotech_task/model/controller/sale_controlller.dart';
+import 'package:xianinfotech_task/controller/sale_controlller.dart';
 
 import '../model/sales_model.dart';
 
@@ -21,7 +21,7 @@ class _SalePageState extends State<SalePage> {
   final billingname = TextEditingController();
 
   final phone = TextEditingController();
-  bool isCredit = true; 
+  bool isCredit = true;
   int selectedInvoiceNumber = 1;
   String firmName = "xianinfotech LLP"; // Ex
   @override
@@ -342,7 +342,6 @@ class _SalePageState extends State<SalePage> {
       return total + (item.quantity * item.price);
     });
   }
- 
 
   Widget buildSaleItemList() {
     return Obx(() {
